@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, onSnapshot, getTask } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
+import { getFirestore, collection, addDoc, getDocs, onSnapshot, getDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,4 +32,6 @@ export {
     db
 }
 
-export const getTask = (id) => getDoc(doc(db, "class", id))
+export const getClas = (id) => getDoc(doc(db, "class", id));
+
+export const updateClas = (id, newFields) => updateDoc(doc(db, 'class', id), newFields);
